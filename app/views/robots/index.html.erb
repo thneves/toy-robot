@@ -1,6 +1,3 @@
-<h1>Robots#index</h1>
-<p>Find me in app/views/robots/index.html.erb</p>
-
 <h1 class="text-primary text-center mt-5">Toy Robot <i class="bi bi-robot text-primary ms-4"></i></h1>
 
 <div class="container w-50 text-center mt-5">
@@ -14,5 +11,14 @@
   <%= render 'robots/instructions' %>
   <%= render 'robots/table' %>
   <div>
+  <%= form_with(model: @robot) do |f| %>
+    <%= f.label :x %>
+    <%= f.text_field :x, class: 'form-control' %>
+    <%= f.label :y %>
+    <%= f.text_field :y, class: 'form-control' %>
+    <%= f.label :f %>
+    <%= f.select :f, {"Directions" => [["North", "N"], ["South", "S"], ["East", "E"], ["West", "W"]]}, class: 'form-control' %>
+    <%= f.submit "Place Robot", class: "btn btn-primary" %>
+  <% end %>
   </div>
 </div>
