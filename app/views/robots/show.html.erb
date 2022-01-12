@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X location:</strong>
+  <%= @robot.x_location %>
+</p>
+
+<p>
+  <strong>Y location:</strong>
+  <%= @robot.y_location %>
+</p>
+
+<p>
+  <strong>F direction:</strong>
+  <%= @robot.f_direction %>
+</p>
+
+<%= link_to 'Edit', edit_robot_path(@robot) %> |
+<%= link_to 'Back', robots_path %>
