@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  get "toy_robot/index"
+  resources :robots, only: %w[index new create]
+
   root to: "toy_robot#index"
 end
