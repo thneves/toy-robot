@@ -1,10 +1,6 @@
 class Robot < ApplicationRecord
 
-  attr_accessor :x_position, :y_position, :f_orientation
-
-  def initialize(params = {})
-    @x_position = nil
-    @y_position = nil
-    @f_orientation = nil
-  end
+  validates :x_location, presence: true, length: { in: 0..4 }
+  validates :y_location, presence: true, length: { in: 0..4 }
+  validates :f_orientation, presence: true, inclusion: { in: %w(north south east west) }
 end

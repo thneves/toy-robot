@@ -10,11 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_163327) do
+ActiveRecord::Schema.define(version: 2022_01_12_192155) do
 
   create_table "robots", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "x_location"
+    t.integer "y_location"
+    t.string "f_orientation"
   end
 
 end
