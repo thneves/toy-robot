@@ -13,17 +13,17 @@
 
   <div class="field">
     <%= form.label :x_location %>
-    <%= form.number_field :x_location %>
+    <%= form.number_field :x_location, class: "form-control w-25" %>
   </div>
 
   <div class="field">
     <%= form.label :y_location %>
-    <%= form.number_field :y_location %>
+    <%= form.number_field :y_location, class: "form-control w-25" %>
   </div>
 
   <div class="field">
     <%= form.label :f_direction %>
-    <%= form.text_field :f_direction %>
+    <%= form.select :f_direction, {"Directions" => [["North", "north"], ["South", "south"], ["East", "east"], ["West", "west"]], class: "form-control" } %>
   </div>
 
   <div class="actions">
