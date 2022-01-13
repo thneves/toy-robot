@@ -1,15 +1,4 @@
 <%= form_with(model: robot) do |form| %>
-  <% if robot.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(robot.errors.count, "error") %> prohibited this robot from being saved:</h2>
-
-      <ul>
-        <% robot.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="field">
     <%= form.label :x_location %>
