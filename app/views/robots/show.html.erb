@@ -1,3 +1,5 @@
+
+<div class="ms-5">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -15,5 +17,11 @@
   <%= @robot.f_direction %>
 </p>
 
+<p>
+  Robot placed at X: <%= @robot.x_location %>, Y: <%= @robot.y_location %>, F: <%= @robot.f_direction %>
+</p>
+
 <%= link_to 'Edit', edit_robot_path(@robot) %> |
 <%= link_to 'Back', robots_path %>
+
+</div>

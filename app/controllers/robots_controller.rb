@@ -13,6 +13,7 @@ class RobotsController < ApplicationController
   # GET /robots/new
   def new
     @robot = Robot.new
+    @current_robot = Robot.last
   end
 
   # GET /robots/1/edit
@@ -22,15 +23,10 @@ class RobotsController < ApplicationController
   # POST /robots or /robots.json
   def create
     @robot = Robot.new(robot_params)
-
-    respond_to do |format|
-      if @robot.save
-        format.html { redirect_to robot_url(@robot), notice: "Robot was successfully created." }
-        format.json { render :show, status: :created, location: @robot }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @robot.errors, status: :unprocessable_entity }
-      end
+    if @robot.save
+      redirect_to root_path
+    else
+      redirect_to root_path
     end
   end
 
