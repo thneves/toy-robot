@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :x_location %>
-    <%= form.number_field :x_location, class: "form-control w-25" %>
+    <%= form.number_field :x_location, in: 0..4, class: "form-control w-25" %>
   </div>
 
   <div class="field">
     <%= form.label :y_location %>
-    <%= form.number_field :y_location, class: "form-control w-25" %>
+    <%= form.number_field :y_location, in: 0..4, class: "form-control w-25" %>
   </div>
 
   <div class="field">
