@@ -1,7 +1,11 @@
 <div class="ms-5">
   <h1>New Robot</h1>
 <div class="w-25">
-<%= render 'form', robot: @robot %>
+  <%= render 'form', robot: @robot %>
+</div>
+
+<div class="w-25">
+  <%= button_to "Move", move_robot_robots_path %>
 </div>
 
 <%= link_to 'Back', robots_path %>

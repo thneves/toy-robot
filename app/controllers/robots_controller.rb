@@ -10,14 +10,37 @@ class RobotsController < ApplicationController
   def show
   end
 
+  def move_robot
+    @robot = Robot.last
+    case @robot.f_direction
+    when 'north'
+      (@robot.y_location - 1).negative? ? {notice: "Cannot move"} : @robot.y_location -= 1
+    when 'south'
+      @robot.y_location + 1 > 4 ? {notice: "Cannot move"} : @robot.y_location += 1
+    when 'east'
+      @robot.x_location + 1 > 4 ? {notice: "Cannot move"} : @robot.x_location += 1
+    when 'west'
+      (@robot.x_location - 1).negative? ? {notice: "Cannot move"} : @robot.x_location -= 1
+    end
+    @robot.update(x_location: @robot.x_location, y_location: @robot.y_location, f_direction: @robot.f_direction)
+    @current_robot = @robot
+    redirect_to root_path
+  end
+
+  def left
+    return @f_orientation = 'west' if @f_orientation == 'north' || @f_orientation == 'south'
+    return @f_orientation = 'north' if @f_orientation == 'west' || @f_orientation == 'east'
+  end
+
+  def right
+    return @f_orientation = 'east' if @f_orientation == 'north' || @f_orientation == 'south'
+    return @f_orientation = 'south' if @f_orientation == 'west' || @f_orientation == 'east'
+  end
+
   # GET /robots/new
   def new
     @robot = Robot.new
     @current_robot = Robot.last
-  end
-
-  # GET /robots/1/edit
-  def edit
   end
 
   # POST /robots or /robots.json
@@ -30,28 +53,6 @@ class RobotsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /robots/1 or /robots/1.json
-  def update
-    respond_to do |format|
-      if @robot.update(robot_params)
-        format.html { redirect_to robot_url(@robot), notice: "Robot was successfully updated." }
-        format.json { render :show, status: :ok, location: @robot }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @robot.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /robots/1 or /robots/1.json
-  def destroy
-    @robot.destroy
-
-    respond_to do |format|
-      format.html { redirect_to robots_url, notice: "Robot was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
