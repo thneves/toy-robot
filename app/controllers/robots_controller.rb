@@ -1,5 +1,4 @@
 class RobotsController < ApplicationController
-  before_action :set_robot, only: %i[ show edit update destroy ]
 
   def new
     @robot = Robot.new
@@ -60,13 +59,8 @@ class RobotsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_robot
-      @robot = Robot.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def robot_params
-      params.require(:robot).permit(:x_location, :y_location, :f_direction)
-    end
+  def robot_params
+    params.require(:robot).permit(:x_location, :y_location, :f_direction)
+  end
 end
