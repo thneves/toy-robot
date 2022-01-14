@@ -7,6 +7,8 @@ This Web Applcation consists in a simulation of a toy robot moving on a square t
 
 ## Live
 
+[Toy Robot](https://the-toy-robot.herokuapp.com/)
+
 
 ## Running Locally
 
@@ -21,13 +23,20 @@ This Web Applcation consists in a simulation of a toy robot moving on a square t
 - Open the terminal in the folder specified.
 - Type: `bundle install` to install the packages.
 
-Setup database
+### Setup
 
  - Type:  `rails db:create`
- - Type:   `rails db:migrate`
+ - Type:  `rails db:migrate`
 
 
-Opening server:
+### Opening local server:
 
 - Type: `rails s`
-- Open `http:localhost:3000`
+- Open `http:localhost:3000` on your browser
+- Have fun :)
+
+
+### Running Tests
+
+- Type `rspec` on terminal and check results.
+- Feel free to create your own tests.
