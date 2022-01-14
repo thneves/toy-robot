@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_01_12_233036) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "robots", force: :cascade do |t|
     t.integer "x_location"
     t.integer "y_location"
