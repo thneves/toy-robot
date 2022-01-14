@@ -23,7 +23,7 @@ This Web Applcation consists in a simulation of a toy robot moving on a square t
 - Open the terminal in the folder specified.
 - Type: `bundle install` to install the packages.
 
-### Setup
+### Setup database
 
  - Type:  `rails db:create`
  - Type:  `rails db:migrate`
