@@ -1,21 +1,18 @@
 <%= form_with(model: robot) do |form| %>
 
-  <div class="field">
-    <%= form.label :x_location %>
-    <%= form.number_field :x_location, in: 0..4, class: "form-control w-25" %>
+  <div class="field d-flex align-items-center">
+    <%= form.label :X %><%= form.number_field :x_location, in: 0..4, class: "form-control form-label-position ms-3" %>
+  </div>
+
+  <div class="field d-flex align-items-center">
+    <%= form.label :Y %><%= form.number_field :y_location, in: 0..4, class: "form-control form-label-position ms-3" %>
   </div>
 
   <div class="field">
-    <%= form.label :y_location %>
-    <%= form.number_field :y_location, in: 0..4, class: "form-control w-25" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :f_direction %>
-    <%= form.select :f_direction, {"Directions" => [["North", "north"], ["South", "south"], ["East", "east"], ["West", "west"]], class: "form-control" } %>
+    <%= form.label :F, class:"me-3" %><%= form.select :f_direction, {"Directions" => [["North", "north"], ["South", "south"], ["East", "east"], ["West", "west"]]  }, class: "ms-3"  %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "PLACE", class:"btn btn-primary" %>
   </div>
 <% end %>

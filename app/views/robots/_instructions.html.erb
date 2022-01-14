@@ -1,9 +1,9 @@
-<div class="mt-5">
-  <h2>INSTRUCTIONS</h2>
-  <ul class="mt-5">
-    <li class="text-primary fw-bold fs-4">PLACE <p class="text-primary fs-5">Set the initial location and facing direction of your Robot</p></li>
-    <li class="text-warning fw-bold fs-4">MOVE <p class="text-warning fs-5">Move the Robot one position into facing direction</p></li>
-    <li class="text-secondary fw-bold fs-4">LEFT <p class="text-secondary fs-5">Change the facing direction of your Robot 90º to the Left</p></li>
-    <li class="text-secondary fw-bold fs-4">RIGHT <p class="text-secondary fs-5">Change the facing direction of your Robot 90º to the Right</p></li>
+<div class="m-5 w-25">
+  <h4 class="text-center">Commands</h4>
+  <ul class="my-3 list-group">
+    <li class="list-group-item text-primary fw-bold"><%= render 'form', robot: @robot %> <p class="text-primary mt-2">Set the initial location and facing direction of your Robot</p></li>
+    <li class="list-group-item text-warning fw-bold"><%= button_to "MOVE", move_robot_robots_path, class: "btn btn-warning" %><p class="mt-2 d-flex me-3"> Current Direction: <%= @current_robot.f_direction.upcase %>  </p><p class="text-warning mt-2">Move the Robot one position into facing direction</p></li>
+    <li class="list-group-item text-secondary fw-bold"><%= button_to "LEFT", left_robots_path, class: "btn btn-secondary" %> <p class="text-secondary mt-2">Change the facing direction of your Robot 90º to the Left</p></li>
+    <li class="list-group-item text-secondary fw-bold"><%= button_to "RIGHT", right_robots_path, class: "btn btn-secondary" %><p class="text-secondary mt-2">Change the facing direction of your Robot 90º to the Right</p></li>
   </ul>
 </div>

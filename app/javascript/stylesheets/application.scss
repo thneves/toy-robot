@@ -1,20 +1,38 @@
 
 @import "bootstrap";
 
+.box {
+  display: flex;
+  width: 100%;
+}
+
 .col-h {
-  height: 100px;
+  height: 120px;
   width: 100px;
 }
 
 .row-w {
-  width: 30%;
+  width: 600px;
 }
 
-.bi-robot {
-  font-size: 20px;
-  color: rgb(38, 134, 126);
+.head-robot {
+  font-size: 60px;
+}
+
+.table-robot {
+  font-size: 60px;
+  color: rgb(235, 34, 144);
+}
+
+.commands {
+  width: 300px;
 }
 
 span {
   font-size: 14px;
+}
+
+.form-label-position {
+  width: 70px;
+  border: 1px solid rgb(27, 97, 189);
 }
