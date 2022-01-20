@@ -31,13 +31,23 @@ class RobotsController < ApplicationController
   def left
     @robot = Robot.last
 
-    if @robot.f_direction == 'west' || @robot.f_direction == 'east'
-      @robot.update!(f_direction: 'north')
+    if @robot.f_direction == 'north'
+      @robot.update!(f_direction: 'west')
       redirect_to root_path and return
     end
 
-    if @robot.f_direction == 'north' || @robot.f_direction == 'south'
-      @robot.update!(f_direction: 'west')
+    if @robot.f_direction == 'west'
+      @robot.update!(f_direction: 'south')
+      redirect_to root_path and return
+    end
+
+    if @robot.f_direction == 'south'
+      @robot.update!(f_direction: 'east')
+      redirect_to root_path and return
+    end
+
+    if @robot.f_direction == 'east'
+      @robot.update!(f_direction: 'north')
       redirect_to root_path and return
     end
   end
@@ -45,13 +55,23 @@ class RobotsController < ApplicationController
   def right
     @robot = Robot.last
 
-    if @robot.f_direction == 'west' || @robot.f_direction == 'east'
+    if @robot.f_direction == 'north'
+      @robot.update!(f_direction: 'east')
+      redirect_to root_path and return
+    end
+
+    if @robot.f_direction == 'east'
       @robot.update!(f_direction: 'south')
       redirect_to root_path and return
     end
 
-    if @robot.f_direction == 'north' || @robot.f_direction == 'south'
-      @robot.update!(f_direction: 'east')
+    if @robot.f_direction == 'south'
+      @robot.update!(f_direction: 'west')
+      redirect_to root_path and return
+    end
+
+    if @robot.f_direction == 'west'
+      @robot.update!(f_direction: 'north')
       redirect_to root_path and return
     end
   end
